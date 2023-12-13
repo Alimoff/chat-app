@@ -1,0 +1,142 @@
+
+
+.App {
+  text-align: center;
+  color:#fff;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.chat-body{
+  flex-grow: 1;
+  overflow: auto;  
+  padding: 10px;
+}
+
+.chat-window {
+  background-color: rgb(61, 124, 74);
+  height: 400px;
+  width:300px;
+  position:fixed;
+  left: 40%;
+  top:10%;
+  font-family: 'Courier New', Courier, monospace;
+  flex-grow: 1;
+  overflow: auto;
+  padding: 10px;
+  }
+
+
+
+  .chat-header {
+    background-color: black;
+    padding:2px;
+    text-align: center;
+    font-size: 15px;
+  }
+
+  .message{
+    color: #fff;
+    font-size: medium;
+    margin: 10px;
+  }
+
+
+
+  .chat-footer{
+    background-color: #0a0707;
+    padding: 7px;
+    font-size: 15px;
+    margin-top: 106%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+
+
+  .footer-input {
+    position: absolute;
+    padding: 7px;
+    left:4%;
+    box-sizing: border-box;
+    font-size: medium;
+    color:#0a0707;
+    display:inline-block;
+  }
+
+  .footer-send-button{
+    position: relative;
+    font-size: medium;
+    right: -35%;
+    width:70px;
+    padding: 6px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+#you {
+  text-align: right;
+}
+#other {
+  text-align: left;
+}
+#you .message-meta {
+  justify-content: flex-start;
+  margin-left: 5px;
+  font-size: 9px;
+  position:absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#you .message-content {
+  justify-content: flex-start;
+  margin-right: 70%;
+  font-size: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+#you {
+  justify-content: flex-start;
+  background-color: coral;
+  margin-right:70%;
+  font-size: 15px;
+  border-radius: 5px;
+}
+
+
+
+#other .message-meta {
+  justify-content: flex-end;
+  margin-right: 5px;
+  font-size: 9px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#other .message-content {
+  justify-content: flex-end;
+  margin-left: 70%;
+  font-size: 15px;
+  background-color: cornflowerblue;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+#other {
+  justify-content: flex-end;
+}

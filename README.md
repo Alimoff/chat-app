@@ -5,7 +5,7 @@ Then `cd server`. Server is back end part of the project and `npm install` again
 
 In the `server` directory npm run dev - to run back end.
 
-Then `cd client/chat` and again npm install `to install` libs used for front end.
+Then `cd client/chat` and again `npm install` to install libs used for front end.
 
 `npm start` to run front end.
 

@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
+import { RiSendPlane2Fill } from "react-icons/ri";
+import ScrollToBottom from 'react-scroll-to-bottom';
 
 function Chat({socket, username, room}){
 
@@ -24,10 +26,12 @@ function Chat({socket, username, room}){
 
     useEffect( () =>{
         socket.on("receiveMessage", (data)=>{
-            setMessageList((list) => [...list, data ])
+            setMessageList((list) => [...list, data]);
+
         });
     }, [socket])
-    
+
+
     return (
         <div className="chat-window">
             <div className="chat-header">
@@ -35,22 +39,27 @@ function Chat({socket, username, room}){
             </div>
 
             <div className="chat-body">
+
+                <ScrollToBottom className="message-container">
                 {messageList.map((messageContent) =>{
+                    console.log(messageContent.message)
                     return (
                         <div className="message"
                         id={username === messageContent.author ? "you" : "other"}>
-                            <div>
+                            <div className="msg">
                             <div className="message-content">
                                 <p>{messageContent.message}</p>
                             </div>
                             <div className="message-meta">
-                                <p>{messageContent.time}</p>
-                                <p>{messageContent.author}</p>
+                                <p id="time" >{messageContent.time}</p>
+                                <p id="user">{messageContent.author}</p>
                             </div>
                             </div>
                         </div>
-                    )
+                    );
                 })}
+
+                </ScrollToBottom>
             </div>
             <div className="chat-footer">
                 <input className = "footer-input" type="text" value={currentMessage} placeholder="Message..." onChange={(event) =>{
@@ -58,7 +67,7 @@ function Chat({socket, username, room}){
                 }} onKeyPress={(event)=>{
                     event.key === "Enter" && sendMessage(); 
                 }}/>
-                <button className="footer-send-button" onClick={sendMessage} >Send</button>
+                <button className="footer-button" onClick={sendMessage} ><RiSendPlane2Fill/></button>
             </div>
 
         </div>
